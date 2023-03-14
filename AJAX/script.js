@@ -10,14 +10,11 @@ function inicializarGestores() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
-                pTitulo.innerHTML = data[libro]['details']['full_title']
+                pTitulo.innerHTML = data[libro]['details']['title']
                 pAutor.innerHTML = data[libro]['details']['publishers']
-                portadaS = data[libro]['thumbnail_url']
-                portada = portadaS.replace("S", "M")
-                pPortada.src = portada
+                let portadaS = data[libro]['thumbnail_url']
+                pPortada.src = portadaS.replace("S", "M")
             })
-
-        // FALTA ARREGLAR FORMATO Y COMPROBAR SI CAMPOS EXISTEN
     }
 }
 
