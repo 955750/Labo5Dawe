@@ -22,6 +22,16 @@ function actualizarCanvas(context) {
     context.drawImage(spritesheet, 0, 0);
     context.strokeStyle = "red";
     context.strokeRect(ventanaDeslizanteCoordX, ventanaDeslizanteCoordY, ventanaDeslizanteAncho, ventanaDeslizanteAlto);
+    context.font = "9px sans-serif";
+    context.fillText(`(${ventanaDeslizanteCoordX}, ${ventanaDeslizanteCoordY})`, spritesheet.width - 45, 15);
+    dibujarSpritesheetPequeño(context);
+}
+
+function dibujarSpritesheetPequeño(context) {
+    context.drawImage(
+        spritesheet, ventanaDeslizanteCoordX, ventanaDeslizanteCoordY, ventanaDeslizanteAncho, ventanaDeslizanteAlto,
+        spritesheet.width + 5, 0, ventanaDeslizanteAncho * 2, ventanaDeslizanteAlto * 2
+    )
 }
 
 function añadirOpcionMoverVentanaDeslizante(context, canvas) {
